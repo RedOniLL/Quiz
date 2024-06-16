@@ -15,5 +15,9 @@ namespace Quiz
         public string[] Wrongs { get; set; }
 
         public bool Status { get; set; }
+
+        public string givenAnswer { get; set; }
+
+        public Question() { givenAnswer = "None"; }
     }
 }

@@ -109,14 +109,16 @@ namespace Quiz
             }
             else
             {
-                MessageBox.Show("asdad");
-                lblQuestion.Text = $"Вікторина завершена! Ваш рахунок: {score}/{questions.Count}";
-                btnNext.Enabled = false;
-                btnNext.Visible = false;
-                rbOption1.Visible = false;
-                rbOption2.Visible = false;
-                rbOption3.Visible = false;
-                rbOption4.Visible = false;
+                string results="";
+                for(int i = 0; i < questions.Count; i++)
+                {
+                    results += questions[i].Text;
+                    results += "\n";
+                    results += $"{questions[i].givenAnswer} - {questions[i].Status}";
+                    results += "\n\n";
+                }
+
+                MessageBox.Show(results);
 
             }
 
@@ -140,29 +142,41 @@ namespace Quiz
 
             if (rbOption1.Checked)
             {
+                questions[questionsCounter].givenAnswer = rbOption1.Text;
                 if (rbOption1.Text == questions[questionsCounter].Answer)
                 {
-                    score++; questions[questionsCounter].Status = true;
+                    score++; 
+                    questions[questionsCounter].Status = true;
                 }
             }
             else
             if (rbOption2.Checked) {
+                questions[questionsCounter].givenAnswer = rbOption2.Text;
                 if (rbOption1.Text == questions[questionsCounter].Answer)
                 {
-                    score++; questions[questionsCounter].Status = true;
+                    score++; 
+                    questions[questionsCounter].Status = true;  
                 }
             }
             else
             if (rbOption3.Checked) {
+                questions[questionsCounter].givenAnswer = rbOption3.Text;
                 if (rbOption1.Text == questions[questionsCounter].Answer)
                 {
-                    score++; questions[questionsCounter].Status = true;
+                    score++; 
+                    questions[questionsCounter].Status = true;
                 }
             }
             else
-            if (rbOption4.Text == questions[questionsCounter].Answer) 
-            { 
-                score++; questions[questionsCounter].Status = true; 
+            if (rbOption4.Checked)
+            {
+                questions[questionsCounter].givenAnswer = rbOption4.Text;
+                if (rbOption1.Text == questions[questionsCounter].Answer)
+                {
+                    score++;
+                    questions[questionsCounter].Status = true;
+
+                }
             }
 
 
