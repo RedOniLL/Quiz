@@ -109,6 +109,7 @@ namespace Quiz
             }
             else
             {
+                MessageBox.Show("asdad");
                 lblQuestion.Text = $"Вікторина завершена! Ваш рахунок: {score}/{questions.Count}";
                 btnNext.Enabled = false;
                 btnNext.Visible = false;
@@ -137,13 +138,32 @@ namespace Quiz
             rbOption4.Text = tempWrongs[3];
 
 
-            if (rbOption1.Checked) { if (rbOption1.Text == questions[questionsCounter].Answer) score++; questions[questionsCounter].Status = true; }
+            if (rbOption1.Checked)
+            {
+                if (rbOption1.Text == questions[questionsCounter].Answer)
+                {
+                    score++; questions[questionsCounter].Status = true;
+                }
+            }
             else
-            if (rbOption2.Checked) { if (rbOption1.Text == questions[questionsCounter].Answer) score++; questions[questionsCounter].Status = true; }
+            if (rbOption2.Checked) {
+                if (rbOption1.Text == questions[questionsCounter].Answer)
+                {
+                    score++; questions[questionsCounter].Status = true;
+                }
+            }
             else
-            if (rbOption3.Checked) { if (rbOption1.Text == questions[questionsCounter].Answer) score++; questions[questionsCounter].Status = true; }
+            if (rbOption3.Checked) {
+                if (rbOption1.Text == questions[questionsCounter].Answer)
+                {
+                    score++; questions[questionsCounter].Status = true;
+                }
+            }
             else
-            if (rbOption4.Text == questions[questionsCounter].Answer) {score++; questions[questionsCounter].Status = true; }
+            if (rbOption4.Text == questions[questionsCounter].Answer) 
+            { 
+                score++; questions[questionsCounter].Status = true; 
+            }
 
 
 
